@@ -8,19 +8,27 @@ var movieList = [
 ];
 
 function getMovieTitle( index ){
-  //add code
+  return movieList[index].title;
 }
 
 console.log(getMovieTitle(3));
+console.log(getMovieTitle(0));
 
 function addMovie( movie ){
-  //add code
 }
 
-var newMovie = {};
+movieList.push(movie);
+return JSON.stringify(movieList);
+}
+
+var newMovie = {title:"In Secret”, year: “2015", length:"138", rating: "7.2", genre: "romantic"};
+
+
 console.log(addMovie(newMovie));
 
 function movieByRating(){
+  movieList.sort(function(a,b){return b.rating - a.rating});
+  return JSON.stringify(movieList);
   //add code
 }
 
